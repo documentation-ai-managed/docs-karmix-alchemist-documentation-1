@@ -1,0 +1,144 @@
+---
+title: Configuration
+description: Configure Karmix Alchemist settings and integrations for your projects
+---
+
+Proper configuration is essential for maximizing the effectiveness of Karmix Alchemist. This guide covers project setup, user management, and integration configuration.
+
+## Project Setup
+
+<Steps>
+  <Step title="Create Project" icon="folder-plus">
+    Log in and click "New Project" to start.
+  </Step>
+  <Step title="Basic Settings" icon="settings">
+    Configure project name, description, and visibility settings.
+  </Step>
+  <Step title="Team Members" icon="users">
+    Invite team members and assign roles.
+  </Step>
+  <Step title="Integrations" icon="plug">
+    Set up integrations with external tools.
+  </Step>
+</Steps>
+
+## Integration Configuration
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Sync documentation with GitHub repositories.
+
+    <ParamField path="repo" param-type="string" required="true">
+      GitHub repository in format owner/repo.
+    </ParamField>
+
+    <ParamField query="branch" param-type="string" required="false">
+      Branch to sync with (default: main).
+    </ParamField>
+  </Tab>
+  <Tab title="Slack" icon="message-square">
+    Receive notifications in Slack channels.
+
+    <ParamField header="Authorization" param-type="string" required="true">
+      Slack bot token for API access.
+    </ParamField>
+  </Tab>
+  <Tab title="Jira" icon="file-text">
+    Link documentation to Jira issues.
+
+    <ParamField path="project" param-type="string" required="true">
+      Jira project key.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## User Management
+
+<ExpandableGroup>
+  <Expandable title="Adding Users" default-open="true">
+    Invite new users by email and assign appropriate roles.
+  </Expandable>
+  <Expandable title="Role Assignment" default-open="false">
+    Choose from Admin, Editor, Contributor, or Viewer roles.
+  </Expandable>
+  <Expandable title="Bulk Operations" default-open="false">
+    Import users from CSV or integrate with directory services.
+  </Expandable>
+</ExpandableGroup>
+
+## Advanced Settings
+
+<Callout kind="info">Advanced settings require admin privileges.</Callout>
+
+| Setting | Type | Description |
+|---------|------|-------------|
+| Version Control | Toggle | Enable/disable automatic versioning |
+| Public Access | Toggle | Allow public viewing of documentation |
+| API Rate Limits | Number | Set API request limits per hour |
+| Webhook URLs | String | Configure webhook endpoints |
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+{
+  "project": {
+    "name": "My Documentation Project",
+    "settings": {
+      "versionControl": true,
+      "publicAccess": false,
+      "rateLimit": 1000,
+      "webhooks": [
+        "https://example.com/webhook"
+      ]
+    }
+  }
+}
+  ```
+  ```yaml
+project:
+  name: My Documentation Project
+  settings:
+    versionControl: true
+    publicAccess: false
+    rateLimit: 1000
+    webhooks:
+      - https://example.com/webhook
+  ```
+</CodeGroup>
+
+## Environment Variables
+
+<Expandable title="Required Variables" default-open="false">
+  - `KARMIX_TOKEN`: Your API authentication token
+  - `KARMIX_BASE_URL`: API base URL (default: https://api.karmixalchemist.com/v1)
+  - `KARMIX_PROJECT_ID`: Default project ID for operations
+</Expandable>
+
+<Callout kind="tip">Store sensitive configuration values as environment variables for security.</Callout>
+
+## Backup and Recovery
+
+<Steps>
+  <Step title="Enable Backups" icon="download">
+    Configure automatic backup schedules.
+  </Step>
+  <Step title="Export Data" icon="file-text">
+    Export project data regularly.
+  </Step>
+  <Step title="Test Recovery" icon="refresh-cw">
+    Verify backup restoration processes.
+  </Step>
+</Steps>
+
+## Troubleshooting Configuration
+
+<ExpandableGroup>
+  <Expandable title="Integration Failures" default-open="false">
+    Check API credentials and network connectivity.
+  </Expandable>
+  <Expandable title="Permission Errors" default-open="false">
+    Verify user roles and access permissions.
+  </Expandable>
+  <Expandable title="Performance Issues" default-open="false">
+    Monitor resource usage and optimize settings.
+  </Expandable>
+</ExpandableGroup>

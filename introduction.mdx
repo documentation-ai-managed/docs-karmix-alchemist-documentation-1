@@ -1,0 +1,127 @@
+---
+title: Introduction
+description: Overview of Karmix Alchemist and its core capabilities
+---
+
+Karmix Alchemist is a powerful documentation management platform that helps teams organize, collaborate, and publish project documentation efficiently. It provides a centralized space for creating, editing, and sharing documentation with advanced features like version control and real-time collaboration.
+
+<Columns cols={3}>
+  <Card title="Quick Setup" icon="zap" href="/authentication">
+    Get started with authentication and basic configuration in minutes.
+  </Card>
+  <Card title="Project Management" icon="folder" href="/usage">
+    Learn how to create and manage documentation projects.
+  </Card>
+  <Card title="API Integration" icon="code" href="/api-reference">
+    Integrate Karmix Alchemist with your development workflow.
+  </Card>
+</Columns>
+
+## Key Features
+
+Karmix Alchemist offers a comprehensive suite of tools designed for modern documentation workflows. The platform supports multiple documentation formats, including Markdown and rich text editing, with built-in version history and collaborative editing capabilities.
+
+<Tabs>
+  <Tab title="For Teams" icon="users">
+    Team collaboration features include real-time editing, comment threads, and approval workflows to streamline documentation processes.
+  </Tab>
+  <Tab title="For Developers" icon="code">
+    Developer-friendly features include API access, webhook integrations, and support for various markup languages.
+  </Tab>
+  <Tab title="For Managers" icon="settings">
+    Management tools provide insights into documentation usage, team productivity metrics, and governance controls.
+  </Tab>
+</Tabs>
+
+## Getting Started
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create your account and verify your email address to begin using Karmix Alchemist.
+  </Step>
+  <Step title="Create Project" icon="folder-plus">
+    Set up your first documentation project and invite team members.
+  </Step>
+  <Step title="Import Content" icon="upload">
+    Import existing documentation or start creating new content.
+  </Step>
+  <Step title="Publish" icon="send">
+    Publish your documentation and share it with stakeholders.
+  </Step>
+</Steps>
+
+## Use Cases
+
+Karmix Alchemist is ideal for various documentation scenarios, from API documentation and user guides to internal knowledge bases and technical specifications.
+
+<Expandable title="API Documentation" default-open="false">
+  Create comprehensive API documentation with interactive examples, parameter descriptions, and response schemas.
+</Expandable>
+
+<Expandable title="User Guides" default-open="false">
+  Develop step-by-step user guides with screenshots, videos, and interactive tutorials.
+</Expandable>
+
+<Expandable title="Knowledge Base" default-open="false">
+  Build internal knowledge bases with search functionality and categorization.
+</Expandable>
+
+<Callout kind="tip">For best results, start with a clear documentation structure and involve stakeholders early in the process.</Callout>
+
+## Integration Options
+
+Karmix Alchemist integrates seamlessly with popular development tools and platforms.
+
+| Tool | Integration Type | Description |
+|------|------------------|-------------|
+| GitHub | Repository sync | Automatically sync documentation with GitHub repositories |
+| Slack | Notifications | Receive updates and notifications in Slack channels |
+| Jira | Issue tracking | Link documentation to Jira issues and projects |
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+// Example API call to create a project
+const response = await fetch('/api/projects', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_TOKEN'
+  },
+  body: JSON.stringify({
+    name: 'My Project',
+    description: 'Documentation for my awesome project'
+  })
+});
+const project = await response.json();
+  ```
+  ```python
+import requests
+
+response = requests.post('/api/projects',
+  json={
+    'name': 'My Project',
+    'description': 'Documentation for my awesome project'
+  },
+  headers={'Authorization': 'Bearer YOUR_TOKEN'}
+)
+project = response.json()
+  ```
+</CodeGroup>
+
+## Support and Resources
+
+Access comprehensive support resources to maximize your use of Karmix Alchemist.
+
+<ExpandableGroup>
+  <Expandable title="Documentation" default-open="true">
+    Explore detailed guides and tutorials in our documentation.
+  </Expandable>
+  <Expandable title="Community" default-open="false">
+    Join our community forums to connect with other users and share best practices.
+  </Expandable>
+  <Expandable title="Support" default-open="false">
+    Contact our support team for technical assistance and troubleshooting.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">Regular updates and new features are released frequently. Check the changelog for the latest improvements.</Callout>
